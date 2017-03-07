@@ -1,0 +1,20 @@
+site_name: 'Neura: Plugin API Docs'
+site_url: http://neura.deleurapps.com
+site_author: Stiven Deleur
+copyright: Neura Plugin for Corona SDK - &copy;2017 Stiven Deleur - Deleur Apps
+markdown_extensions:
+  - extra
+  - admonition
+  - fenced_code
+  - codehilite:
+      noclasses: True
+      guess_lang: False
+      pygments_style: borland
+  - toc:
+      permalink: True
+theme: readthedocs
+pages:
+  - 'Introduction': 'index.md'
+  - 'Functions': 'functions.md'
+  - 'Events': 'events.md'
+  - 'About': 'about.md'
