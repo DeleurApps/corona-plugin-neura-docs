@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <meta name="author" content="Stiven Deleur">
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Functions - Neura: Plugin API Docs</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../css/highlight.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Functions";
+    var mkdocs_page_input_path = "functions.md";
+    var mkdocs_page_url = "/functions/";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js"></script>
+  <script src="../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../js/highlight.pack.js"></script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> Neura: Plugin API Docs</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="..">Introduction</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 current">
+        <a class="current" href="./">Functions</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#functions">Functions</a></li>
+                
+                    <li><a class="toctree-l4" href="#adddevice">addDevice()</a></li>
+                
+                    <li><a class="toctree-l4" href="#addplace">addPlace()</a></li>
+                
+                    <li><a class="toctree-l4" href="#authenticate">authenticate()</a></li>
+                
+                    <li><a class="toctree-l4" href="#connect">connect()</a></li>
+                
+                    <li><a class="toctree-l4" href="#disconnect">disconnect()</a></li>
+                
+                    <li><a class="toctree-l4" href="#enableautomaticallysynclogs">enableAutomaticallySyncLogs()</a></li>
+                
+                    <li><a class="toctree-l4" href="#enableneurahandingstatealertmessages">enableNeuraHandingStateAlertMessages()</a></li>
+                
+                    <li><a class="toctree-l4" href="#forgetme">forgetMe()</a></li>
+                
+                    <li><a class="toctree-l4" href="#getapppermissions">getAppPermissions()</a></li>
+                
+                    <li><a class="toctree-l4" href="#getdailysummary">getDailySummary()</a></li>
+                
+                    <li><a class="toctree-l4" href="#getknowncapabilities">getKnownCapabilities()</a></li>
+                
+                    <li><a class="toctree-l4" href="#getknowndevices">getKnownDevices()</a></li>
+                
+                    <li><a class="toctree-l4" href="#getlocationbasedevents">getLocationBasedEvents()</a></li>
+                
+                    <li><a class="toctree-l4" href="#getmissingdataforevent">getMissingDataForEvent()</a></li>
+                
+                    <li><a class="toctree-l4" href="#getpermissionstatus">getPermissionStatus()</a></li>
+                
+                    <li><a class="toctree-l4" href="#getsdkversion">getSdkVersion()</a></li>
+                
+                    <li><a class="toctree-l4" href="#getsleepprofile">getSleepProfile()</a></li>
+                
+                    <li><a class="toctree-l4" href="#getsubscriptions">getSubscriptions()</a></li>
+                
+                    <li><a class="toctree-l4" href="#getuserdetails">getUserDetails()</a></li>
+                
+                    <li><a class="toctree-l4" href="#getuserphone">getUserPhone()</a></li>
+                
+                    <li><a class="toctree-l4" href="#getuserplacebylabeltype">getUserPlaceByLabelType()</a></li>
+                
+                    <li><a class="toctree-l4" href="#getusersituation">getUserSituation()</a></li>
+                
+                    <li><a class="toctree-l4" href="#hasdevicewithcapability">hasDeviceWithCapability()</a></li>
+                
+                    <li><a class="toctree-l4" href="#isloggedin">isLoggedIn()</a></li>
+                
+                    <li><a class="toctree-l4" href="#ismissingdataforevent">isMissingDataForEvent()</a></li>
+                
+                    <li><a class="toctree-l4" href="#registerfirebasetoken">registerFirebaseToken()</a></li>
+                
+                    <li><a class="toctree-l4" href="#removesubscription">removeSubscription()</a></li>
+                
+                    <li><a class="toctree-l4" href="#sendfeedbackonevent">sendFeedbackOnEvent()</a></li>
+                
+                    <li><a class="toctree-l4" href="#shouldsubscribetoevent">shouldSubscribeToEvent()</a></li>
+                
+                    <li><a class="toctree-l4" href="#simulateanevent">simulateAnEvent()</a></li>
+                
+                    <li><a class="toctree-l4" href="#subscribetoevent">subscribeToEvent()</a></li>
+                
+            
+            </ul>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../events/">Events</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../about/">About</a>
+        
+    </li>
+<li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">Neura: Plugin API Docs</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Functions</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="functions">Functions<a class="headerlink" href="#functions" title="Permanent link">&para;</a></h1>
+<h2 id="adddevice"><strong>addDevice()</strong><a class="headerlink" href="#adddevice" title="Permanent link">&para;</a></h2>
+<h3 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h3>
+<p>Opening a device picker screen.
+<strong>Note</strong>:<em>User must be logged in for this method.</em></p>
+<h3 id="syntax">Syntax<a class="headerlink" href="#syntax" title="Permanent link">&para;</a></h3>
+<pre class="codehilite"><code>neura.addDevice(options, listener)</code></pre>
+
+
+<h4 id="options-optional">options (optional)<a class="headerlink" href="#options-optional" title="Permanent link">&para;</a></h4>
+<p><em><a href="https://docs.coronalabs.com/api/type/Table.html">Table</a>.</em> A table of options. If none are provided, the default device picker screen is shown. Parameters:</p>
+<h5 id="devicename-optional"><em>deviceName</em> (optional)<a class="headerlink" href="#devicename-optional" title="Permanent link">&para;</a></h5>
+<p><em><a href="https://docs.coronalabs.com/api/type/String.html">String</a>.</em> We'll search the deviceName in our devices list, and add it automatically. Adding a device without displaying our device picker screen. </p>
+<ul>
+<li>Note that authorization WebView required for connecting the device might still be shown. </li>
+<li>Note that deviceName isn't case sensitive, meaning if you pass device_name and the device's name is actually Device_naME, then it's still valid, and will be added. </li>
+</ul>
+<p>You can get all the devices (and their names) by calling <a href="#getKnownDevices">neura.getKnownDevices()</a> </p>
+<h5 id="devicecapabilitynames-optional"><em>deviceCapabilityNames</em> (optional)<a class="headerlink" href="#devicecapabilitynames-optional" title="Permanent link">&para;</a></h5>
+<p><em><a href="https://docs.coronalabs.com/api/type/Table.html">Table</a>.</em> Opening a device picker screen with devices has at least one capability from the deviceCapabilities list provided. We'll only show devices which your user hasn't added yet.</p>
+<p>For example, if deviceCapabilities = {"sleepQuality", "heartRateMeasurement"} we'll present devices which are either sleepQuality or scale_measure (if a device is sleepQuality and heartRateMeasurement we'll present it as well). </p>
+<h4 id="listener-optional">listener (optional)<a class="headerlink" href="#listener-optional" title="Permanent link">&para;</a></h4>
+<p><em><a href="https://docs.coronalabs.com/api/type/Listener.html">Listener</a>.</em> Callback to receive results. Event is sent to the default listener provided in <a href="#connect">neura.connect()</a> if no listener is provided.</p>
+<h2 id="addplace"><strong>addPlace()</strong><a class="headerlink" href="#addplace" title="Permanent link">&para;</a></h2>
+<h3 id="overview_1">Overview<a class="headerlink" href="#overview_1" title="Permanent link">&para;</a></h3>
+<p>TODO</p>
+<h2 id="authenticate"><strong>authenticate()</strong><a class="headerlink" href="#authenticate" title="Permanent link">&para;</a></h2>
+<h3 id="overview_2">Overview<a class="headerlink" href="#overview_2" title="Permanent link">&para;</a></h3>
+<p>Authenticating your user with Neura : login or sign up a new user.</p>
+<h3 id="syntax_1">Syntax<a class="headerlink" href="#syntax_1" title="Permanent link">&para;</a></h3>
+<pre class="codehilite"><code>neura.authenticate(listener)</code></pre>
+
+
+<h4 id="listener-optional_1">listener (optional)<a class="headerlink" href="#listener-optional_1" title="Permanent link">&para;</a></h4>
+<p><em><a href="https://docs.coronalabs.com/api/type/Listener.html">Listener</a>.</em> Callback to receive results. Event is sent to the default listener provided in <a href="#connect">neura.connect()</a> if no listener is provided.</p>
+<h2 id="connect"><strong>connect()</strong><a class="headerlink" href="#connect" title="Permanent link">&para;</a></h2>
+<h3 id="overview_3">Overview<a class="headerlink" href="#overview_3" title="Permanent link">&para;</a></h3>
+<p>Connecting to neura and firebase. Check <a href="..">Introduction</a> for more info.</p>
+<h3 id="syntax_2">Syntax<a class="headerlink" href="#syntax_2" title="Permanent link">&para;</a></h3>
+<pre class="codehilite"><code>neura.conenct(options, listener)</code></pre>
+
+
+<h4 id="options-required">options (required)<a class="headerlink" href="#options-required" title="Permanent link">&para;</a></h4>
+<p><em><a href="https://docs.coronalabs.com/api/type/Table.html">Table</a>.</em> A table of options. Parameters:</p>
+<h5 id="appuid-required"><em>appUid</em> (required)<a class="headerlink" href="#appuid-required" title="Permanent link">&para;</a></h5>
+<p><em><a href="https://docs.coronalabs.com/api/type/String.html">String</a>.</em> Neura App UID.</p>
+<h5 id="appsecret-required"><em>appSecret</em> (required)<a class="headerlink" href="#appsecret-required" title="Permanent link">&para;</a></h5>
+<p><em><a href="https://docs.coronalabs.com/api/type/String.html">String</a>.</em> Neura App Secret.</p>
+<h5 id="firebase-optional"><em>firebase</em> (optional)<a class="headerlink" href="#firebase-optional" title="Permanent link">&para;</a></h5>
+<p><em><a href="https://docs.coronalabs.com/api/type/Table.html">Table</a>.</em> Table of Firebase parameters to receive push notifications. Should include <code>apiKey</code>, <code>applicationId</code>, and <code>gcmSenderId</code> keys.</p>
+<h4 id="listener-required">listener (required)<a class="headerlink" href="#listener-required" title="Permanent link">&para;</a></h4>
+<p><em><a href="https://docs.coronalabs.com/api/type/Listener.html">Listener</a>.</em> General listener for all events if none is provided in the function call.</p>
+<h2 id="disconnect"><strong>disconnect()</strong><a class="headerlink" href="#disconnect" title="Permanent link">&para;</a></h2>
+<h3 id="overview_4">Overview<a class="headerlink" href="#overview_4" title="Permanent link">&para;</a></h3>
+<p>Disconnecting NeuraApiClient instance.</p>
+<h3 id="syntax_3">Syntax<a class="headerlink" href="#syntax_3" title="Permanent link">&para;</a></h3>
+<pre class="codehilite"><code>neura.disconnect()</code></pre>
+
+
+<h2 id="enableautomaticallysynclogs"><strong>enableAutomaticallySyncLogs()</strong><a class="headerlink" href="#enableautomaticallysynclogs" title="Permanent link">&para;</a></h2>
+<h3 id="overview_5">Overview<a class="headerlink" href="#overview_5" title="Permanent link">&para;</a></h3>
+<p>A log file will be sent to our servers, in order to track issues your user might be having. 
+<strong>By default</strong> Syncing logs is disabled.</p>
+<h3 id="syntax_4">Syntax<a class="headerlink" href="#syntax_4" title="Permanent link">&para;</a></h3>
+<pre class="codehilite"><code>neura.enableAutomaticallySyncLogs(enable)</code></pre>
+
+
+<h4 id="enable-required">enable (required)<a class="headerlink" href="#enable-required" title="Permanent link">&para;</a></h4>
+<p><em><a href="https://docs.coronalabs.com/api/type/Boolean.html">Boolean</a>.</em> sending automatically logs to our server, false otherwise.</p>
+<h2 id="enableneurahandingstatealertmessages"><strong>enableNeuraHandingStateAlertMessages()</strong><a class="headerlink" href="#enableneurahandingstatealertmessages" title="Permanent link">&para;</a></h2>
+<h3 id="overview_6">Overview<a class="headerlink" href="#overview_6" title="Permanent link">&para;</a></h3>
+<p>Neura uses multiply sensors and permission, we're tracking when :
+- (On Marshmallow os and above) A permission isn't granted by your user, and is required by Neura to work. <strong>Fyi</strong> this applies only for permissions that are critical, fe - location. 
+- Sensors are disabled by the user(location/wifi/bluetooth/network). <strong>Fyi</strong> This only means that the sensors are disabled, not when there's no wifi available fe. </p>
+<p><strong>We'll alert for the disabled sensors whenever Neura sdk might need it.</strong> </p>
+<p><strong>By default Neura alert on sensors and permission is enabled.</strong></p>
+<p>If you choose to enable this feature, and let us handle a connection with your user, the flow is described below : </p>
+<ol>
+<li>Neura detects that a sensor is disabled or permission is missing and is needed at the moment. </li>
+<li>A notification for the user will be presented. </li>
+<li>If the user presses this notification:</li>
+</ol>
+<p>3a. When permission missing: A transparent activity is opened, with the standard permission dialog. If user selects "Never ask again", we won't display the notification anymore.</p>
+<p>3b. When sensor is disabled: An intent for opening the sensors's settings will be called.</p>
+<h3 id="syntax_5">Syntax<a class="headerlink" href="#syntax_5" title="Permanent link">&para;</a></h3>
+<pre class="codehilite"><code>neura.enableNeuraHandingStateAlertMessages(enable)</code></pre>
+
+
+<h4 id="enable-required_1">enable (required)<a class="headerlink" href="#enable-required_1" title="Permanent link">&para;</a></h4>
+<p><em><a href="https://docs.coronalabs.com/api/type/Boolean.html">Boolean</a>.</em> true if you want neura to handle alerting the user on permission missing or sensors disabled, false otherwise(by default enable = true : Neura will communicate with your user when a permission is missing).</p>
+<h2 id="forgetme"><strong>forgetMe()</strong><a class="headerlink" href="#forgetme" title="Permanent link">&para;</a></h2>
+<h3 id="overview_7">Overview<a class="headerlink" href="#overview_7" title="Permanent link">&para;</a></h3>
+<p>Calling forgetMe method will disconnect your Neura account, revoke all permissions and stop any notificatiogns between Neura and your application. 
+Examples : </p>
+<ol>
+<li>forgetMe(false, listener) will do a 'silence' disconnection from neura. </li>
+<li>forgetMe(true, listener) will display an 'are you sure' dialog, followed by disconnection from neura if the user presses 'yes'. </li>
+</ol>
+<p><strong>Note:</strong> <em>User must be logged in for this method.</em></p>
+<h3 id="syntax_6">Syntax<a class="headerlink" href="#syntax_6" title="Permanent link">&para;</a></h3>
+<pre class="codehilite"><code>neura.forgetMe(showAreYouSureDialog, listener)</code></pre>
+
+
+<h4 id="showareyousuredialog-optional">showAreYouSureDialog (optional)<a class="headerlink" href="#showareyousuredialog-optional" title="Permanent link">&para;</a></h4>
+<p><em><a href="https://docs.coronalabs.com/api/type/Boolean.html">Boolean</a>.</em> true if you want an "are you sure" dialog to be displayed to your user, false otherwise("silent" forget me). <strong>Default</strong>: <code>false</code></p>
+<h4 id="listener-optional_2">listener (optional)<a class="headerlink" href="#listener-optional_2" title="Permanent link">&para;</a></h4>
+<p><em><a href="https://docs.coronalabs.com/api/type/Listener.html">Listener</a>.</em> Callback to receive results. Event is sent to the default listener provided in <a href="#connect">neura.connect()</a> if no listener is provided.</p>
+<h2 id="getapppermissions"><strong>getAppPermissions()</strong><a class="headerlink" href="#getapppermissions" title="Permanent link">&para;</a></h2>
+<h3 id="overview_8">Overview<a class="headerlink" href="#overview_8" title="Permanent link">&para;</a></h3>
+<p>Receiving the permissions an application has as declared on the <a href="https://dev.theneura.com/console/apps">developer's console.</a></p>
+<h3 id="syntax_7">Syntax<a class="headerlink" href="#syntax_7" title="Permanent link">&para;</a></h3>
+<pre class="codehilite"><code>neura.getAppPermissions(listener)</code></pre>
+
+
+<h4 id="listener-optional_3">listener (optional)<a class="headerlink" href="#listener-optional_3" title="Permanent link">&para;</a></h4>
+<p><em><a href="https://docs.coronalabs.com/api/type/Listener.html">Listener</a>.</em> Callback to receive results. Event is sent to the default listener provided in <a href="#connect">neura.connect()</a> if no listener is provided.</p>
+<h2 id="getdailysummary"><strong>getDailySummary()</strong><a class="headerlink" href="#getdailysummary" title="Permanent link">&para;</a></h2>
+<h3 id="overview_9">Overview<a class="headerlink" href="#overview_9" title="Permanent link">&para;</a></h3>
+<p>Returns a user's wellness information for a single day. Daily summary is calculated from the time when the user woke on the requested date until the time the user woke on the following calendar day (date + 1 day). If Neura is unable to identify when the user woke, then daily summary is unavailable for that day.</p>
+<p>To retrieve daily data, permission for dailySummary is required. 
+For more information, go to <a href="https://dev.theneura.com/docs/api/insights#sleep">here</a>. <strong>Note:</strong> <em>User must be logged in for this method.</em></p>
+<h3 id="syntax_8">Syntax<a class="headerlink" href="#syntax_8" title="Permanent link">&para;</a></h3>
+<pre class="codehilite"><code>neura.getDailySummary(timestamp, listener)</code></pre>
+
+
+<h4 id="timestamp-required">timestamp (required)<a class="headerlink" href="#timestamp-required" title="Permanent link">&para;</a></h4>
+<p><em><a href="https://docs.coronalabs.com/api/type/Number.html">Number</a>.</em> Timestamp of the day to calculate daily summary. Can be any timestamp within the day.</p>
+<h4 id="listener-optional_4">listener (optional)<a class="headerlink" href="#listener-optional_4" title="Permanent link">&para;</a></h4>
+<p><em><a href="https://docs.coronalabs.com/api/type/Listener.html">Listener</a>.</em> Callback to receive results. Event is sent to the default listener provided in <a href="#connect">neura.connect()</a> if no listener is provided.</p>
+<h2 id="getknowncapabilities"><strong>getKnownCapabilities()</strong><a class="headerlink" href="#getknowncapabilities" title="Permanent link">&para;</a></h2>
+<h3 id="overview_10">Overview<a class="headerlink" href="#overview_10" title="Permanent link">&para;</a></h3>
+<p>Fetching all the known capabilities for devices. </p>
+<p><strong>Returns</strong>: a table of json objects for every capability.</p>
+<p><strong>Note:</strong> <em>User must be logged in for this method.</em></p>
+<h3 id="syntax_9">Syntax<a class="headerlink" href="#syntax_9" title="Permanent link">&para;</a></h3>
+<pre class="codehilite"><code>local capabilities = neura.getKnownCapabilities()</code></pre>
+
+
+<h2 id="getknowndevices"><strong>getKnownDevices()</strong><a class="headerlink" href="#getknowndevices" title="Permanent link">&para;</a></h2>
+<h3 id="overview_11">Overview<a class="headerlink" href="#overview_11" title="Permanent link">&para;</a></h3>
+<p>Fetching all the known devices Neura has to offer. 
+<strong>Note:</strong> <em>User must be logged in for this method.</em></p>
+<h3 id="syntax_10">Syntax<a class="headerlink" href="#syntax_10" title="Permanent link">&para;</a></h3>
+<pre class="codehilite"><code>neura.getKnownDevices(listener)</code></pre>
+
+
+<h4 id="listener-optional_5">listener (optional)<a class="headerlink" href="#listener-optional_5" title="Permanent link">&para;</a></h4>
+<p><em><a href="https://docs.coronalabs.com/api/type/Listener.html">Listener</a>.</em> Callback to receive results. Event is sent to the default listener provided in <a href="#connect">neura.connect()</a> if no listener is provided.</p>
+<h2 id="getlocationbasedevents"><strong>getLocationBasedEvents()</strong><a class="headerlink" href="#getlocationbasedevents" title="Permanent link">&para;</a></h2>
+<h3 id="overview_12">Overview<a class="headerlink" href="#overview_12" title="Permanent link">&para;</a></h3>
+<p><strong>Returns</strong>: a table of events which are location based events. </p>
+<ul>
+<li>fe : userArrivedHome - where home is a location. </li>
+<li>fe : userArrivedToActiveZone - where ActiveZone represents a location. </li>
+<li>fe : userStartedWalking - This event is NOT a location based event, and won't be in the list. 
+<strong>Note:</strong> <em>User must be logged in for this method.</em></li>
+</ul>
+<h3 id="syntax_11">Syntax<a class="headerlink" href="#syntax_11" title="Permanent link">&para;</a></h3>
+<pre class="codehilite"><code>local locationBasedEvents = neura.getLocationBasedEvents()</code></pre>
+
+
+<h2 id="getmissingdataforevent"><strong>getMissingDataForEvent()</strong><a class="headerlink" href="#getmissingdataforevent" title="Permanent link">&para;</a></h2>
+<h3 id="overview_13">Overview<a class="headerlink" href="#overview_13" title="Permanent link">&para;</a></h3>
+<p>Opening missing data flow screen. Lets examine <a href="https://dev.theneura.com/docs/api/events">neura events</a> : There are plenty of 'personal places' events related. Neura allows your user to add multiply places for most of the places on the list except for home. 
+If the event isn't related to home - this method will always open a picker for your user. </p>
+<p>fe : eventName = 'userArrivedAtAirport' - since there are plenty of airports, even if you set up an airport, you can still add more airports. </p>
+<p>Note that there might be several labels that's missing for each event, so, listener will be called several times, each time for a missing label. 
+A boolean for success/fail will be returned in listener </p>
+<p><strong>Note:</strong> <em>User must be logged in for this method.</em></p>
+<h3 id="syntax_12">Syntax<a class="headerlink" href="#syntax_12" title="Permanent link">&para;</a></h3>
+<pre class="codehilite"><code>neura.getMissingDataForEvent(eventName, listener)</code></pre>
+
+
+<h4 id="eventname-required">eventName (required)<a class="headerlink" href="#eventname-required" title="Permanent link">&para;</a></h4>
+<p><em><a href="https://docs.coronalabs.com/api/type/String.html">String</a>.</em> event to check if all the require fields exists.</p>
+<h4 id="listener-optional_6">listener (optional)<a class="headerlink" href="#listener-optional_6" title="Permanent link">&para;</a></h4>
+<p><em><a href="https://docs.coronalabs.com/api/type/Listener.html">Listener</a>.</em> Callback to receive results. Event is sent to the default listener provided in <a href="#connect">neura.connect()</a> if no listener is provided.</p>
+<h2 id="getpermissionstatus"><strong>getPermissionStatus()</strong><a class="headerlink" href="#getpermissionstatus" title="Permanent link">&para;</a></h2>
+<h3 id="overview_14">Overview<a class="headerlink" href="#overview_14" title="Permanent link">&para;</a></h3>
+<p>TODO</p>
+<h2 id="getsdkversion"><strong>getSdkVersion()</strong><a class="headerlink" href="#getsdkversion" title="Permanent link">&para;</a></h2>
+<h3 id="overview_15">Overview<a class="headerlink" href="#overview_15" title="Permanent link">&para;</a></h3>
+<p><strong>Returns:</strong> SDK Version string</p>
+<h3 id="syntax_13">Syntax<a class="headerlink" href="#syntax_13" title="Permanent link">&para;</a></h3>
+<pre class="codehilite"><code>local sdkVersion = neura.getSdkVersion()</code></pre>
+
+
+<h2 id="getsleepprofile"><strong>getSleepProfile()</strong><a class="headerlink" href="#getsleepprofile" title="Permanent link">&para;</a></h2>
+<h3 id="overview_16">Overview<a class="headerlink" href="#overview_16" title="Permanent link">&para;</a></h3>
+<p>Returns a user's sleep information during a period of time beginning on startTimestamp and ending on endTimestamp, inclusive. 
+Please note that the lightSleep, deepSleep, and efficiency metrics are only available when the user is connected to an activity tracker.</p>
+<p>To retrieve sleep data, permission for sleepData is required. 
+For more information, go to <a href="https://dev.theneura.com/docs/api/insights#sleep">here</a>. <strong>Note:</strong> <em>User must be logged in for this method.</em></p>
+<h3 id="syntax_14">Syntax<a class="headerlink" href="#syntax_14" title="Permanent link">&para;</a></h3>
+<pre class="codehilite"><code>neura.getSleepProfile(startTimestamp, endTimestamp, listener)</code></pre>
+
+
+<h4 id="starttimestamp-required">startTimestamp (required)<a class="headerlink" href="#starttimestamp-required" title="Permanent link">&para;</a></h4>
+<p><em><a href="https://docs.coronalabs.com/api/type/Number.html">Number</a>.</em> start time for calculating sleep profile.</p>
+<h4 id="endtimestamp-required">endTimestamp (required)<a class="headerlink" href="#endtimestamp-required" title="Permanent link">&para;</a></h4>
+<p><em><a href="https://docs.coronalabs.com/api/type/Number.html">Number</a>.</em> start time for calculating sleep profile.</p>
+<h4 id="listener-optional_7">listener (optional)<a class="headerlink" href="#listener-optional_7" title="Permanent link">&para;</a></h4>
+<p><em><a href="https://docs.coronalabs.com/api/type/Listener.html">Listener</a>.</em> Callback to receive results. Event is sent to the default listener provided in <a href="#connect">neura.connect()</a> if no listener is provided.</p>
+<h2 id="getsubscriptions"><strong>getSubscriptions()</strong><a class="headerlink" href="#getsubscriptions" title="Permanent link">&para;</a></h2>
+<h3 id="overview_17">Overview<a class="headerlink" href="#overview_17" title="Permanent link">&para;</a></h3>
+<p>Receiving all the subscriptions a user has to an application. 
+<strong>Note:</strong> <em>User must be logged in for this method.</em></p>
+<h3 id="syntax_15">Syntax<a class="headerlink" href="#syntax_15" title="Permanent link">&para;</a></h3>
+<pre class="codehilite"><code>neura.getSubscriptions(listener)</code></pre>
+
+
+<h4 id="listener-optional_8">listener (optional)<a class="headerlink" href="#listener-optional_8" title="Permanent link">&para;</a></h4>
+<p><em><a href="https://docs.coronalabs.com/api/type/Listener.html">Listener</a>.</em> Callback to receive results. Event is sent to the default listener provided in <a href="#connect">neura.connect()</a> if no listener is provided.</p>
+<h2 id="getuserdetails"><strong>getUserDetails()</strong><a class="headerlink" href="#getuserdetails" title="Permanent link">&para;</a></h2>
+<h3 id="overview_18">Overview<a class="headerlink" href="#overview_18" title="Permanent link">&para;</a></h3>
+<p>Receiving user's details. 
+<strong>Note:</strong> <em>User must be logged in for this method.</em></p>
+<h3 id="syntax_16">Syntax<a class="headerlink" href="#syntax_16" title="Permanent link">&para;</a></h3>
+<pre class="codehilite"><code>neura.getUserDetails(listener)</code></pre>
+
+
+<h4 id="listener-optional_9">listener (optional)<a class="headerlink" href="#listener-optional_9" title="Permanent link">&para;</a></h4>
+<p><em><a href="https://docs.coronalabs.com/api/type/Listener.html">Listener</a>.</em> Callback to receive results. Event is sent to the default listener provided in <a href="#connect">neura.connect()</a> if no listener is provided.</p>
+<h2 id="getuserphone"><strong>getUserPhone()</strong><a class="headerlink" href="#getuserphone" title="Permanent link">&para;</a></h2>
+<h3 id="overview_19">Overview<a class="headerlink" href="#overview_19" title="Permanent link">&para;</a></h3>
+<p>Receiving user's phone as authenticated with Neura api(<a href="#authenticate">neura.authenticate()</a>) 
+<strong>Note:</strong> <em>User must be logged in for this method.</em></p>
+<h3 id="syntax_17">Syntax<a class="headerlink" href="#syntax_17" title="Permanent link">&para;</a></h3>
+<pre class="codehilite"><code>neura.getUserPhone(listener)</code></pre>
+
+
+<h4 id="listener-optional_10">listener (optional)<a class="headerlink" href="#listener-optional_10" title="Permanent link">&para;</a></h4>
+<p><em><a href="https://docs.coronalabs.com/api/type/Listener.html">Listener</a>.</em> Callback to receive results. Event is sent to the default listener provided in <a href="#connect">neura.connect()</a> if no listener is provided.</p>
+<h2 id="getuserplacebylabeltype"><strong>getUserPlaceByLabelType()</strong><a class="headerlink" href="#getuserplacebylabeltype" title="Permanent link">&para;</a></h2>
+<h3 id="overview_20">Overview<a class="headerlink" href="#overview_20" title="Permanent link">&para;</a></h3>
+<p>The user's place related address. For example, if the placeName is home, we'll return the home address. 
+There could be multiply locations for each placeName, so we're returning a list of PlaceNode. </p>
+<p>You can view the full list of events here, for each event, you can extract its placeName. For example, for the event : userLeftSchoolCampus, the placeName is : SchoolCampus(case sensitive isn't mandatory). 
+<strong>Note:</strong> <em>User must be logged in for this method.</em></p>
+<p><strong>Returns:</strong> Table of json objects for places.</p>
+<h3 id="syntax_18">Syntax<a class="headerlink" href="#syntax_18" title="Permanent link">&para;</a></h3>
+<pre class="codehilite"><code>local places = neura.getUserPlaceByLabelType(placeName)</code></pre>
+
+
+<h4 id="placename-required">placeName (required)<a class="headerlink" href="#placename-required" title="Permanent link">&para;</a></h4>
+<p><em><a href="https://docs.coronalabs.com/api/type/String.html">String</a>.</em> home, work, gym, etc... 
+Check out the full list of <a href="https://dev.theneura.com/docs/api/labels">available labels</a>.</p>
+<h2 id="getusersituation"><strong>getUserSituation()</strong><a class="headerlink" href="#getusersituation" title="Permanent link">&para;</a></h2>
+<h3 id="overview_21">Overview<a class="headerlink" href="#overview_21" title="Permanent link">&para;</a></h3>
+<p>Returning the user's whereabouts (locations &amp; activities) for specific timestamp. 
+<strong>Note:</strong> <em>User must be logged in for this method.</em></p>
+<h3 id="syntax_19">Syntax<a class="headerlink" href="#syntax_19" title="Permanent link">&para;</a></h3>
+<pre class="codehilite"><code>neura.getUserSituation(timestamp, listener)</code></pre>
+
+
+<h4 id="timestamp-required_1">timestamp (required)<a class="headerlink" href="#timestamp-required_1" title="Permanent link">&para;</a></h4>
+<p><em><a href="https://docs.coronalabs.com/api/type/Number.html">Number</a>.</em> Receiving the user's status and whereabouts before timestamp, during timestamp and after timestamp.</p>
+<h4 id="listener-optional_11">listener (optional)<a class="headerlink" href="#listener-optional_11" title="Permanent link">&para;</a></h4>
+<p><em><a href="https://docs.coronalabs.com/api/type/Listener.html">Listener</a>.</em> Callback to receive results. Event is sent to the default listener provided in <a href="#connect">neura.connect()</a> if no listener is provided.</p>
+<h2 id="hasdevicewithcapability"><strong>hasDeviceWithCapability()</strong><a class="headerlink" href="#hasdevicewithcapability" title="Permanent link">&para;</a></h2>
+<h3 id="overview_22">Overview<a class="headerlink" href="#overview_22" title="Permanent link">&para;</a></h3>
+<p><strong>Note:</strong> <em>User must be logged in for this method.</em></p>
+<p><strong>Returns:</strong> true if user has a device with the capabilityName, false otherwise.</p>
+<h3 id="syntax_20">Syntax<a class="headerlink" href="#syntax_20" title="Permanent link">&para;</a></h3>
+<pre class="codehilite"><code>local hasDevice = neura.hasDeviceWithCapability(capabilityName)</code></pre>
+
+
+<h4 id="capabilityname-required">capabilityName (required)<a class="headerlink" href="#capabilityname-required" title="Permanent link">&para;</a></h4>
+<p><em><a href="https://docs.coronalabs.com/api/type/String.html">String</a>.</em> capability name as can be fetched from <a href="#getKnownCapabilities">neura.getKnownCapabilities()</a></p>
+<h2 id="isloggedin"><strong>isLoggedIn()</strong><a class="headerlink" href="#isloggedin" title="Permanent link">&para;</a></h2>
+<h3 id="overview_23">Overview<a class="headerlink" href="#overview_23" title="Permanent link">&para;</a></h3>
+<p>Check if user is logged in to Neura.</p>
+<p><strong>Returns:</strong> true if the user is logged in to Neura. If user is logged in, you may call any api method in this class, if user isn't logged in, please call <a href="#authenticate">neura.authenticate()</a>.</p>
+<h3 id="syntax_21">Syntax<a class="headerlink" href="#syntax_21" title="Permanent link">&para;</a></h3>
+<pre class="codehilite"><code>neura.isLoggedIn()</code></pre>
+
+
+<h2 id="ismissingdataforevent"><strong>isMissingDataForEvent()</strong><a class="headerlink" href="#ismissingdataforevent" title="Permanent link">&para;</a></h2>
+<h3 id="overview_24">Overview<a class="headerlink" href="#overview_24" title="Permanent link">&para;</a></h3>
+<p>Returning whether the event missing required fields in order for the sdk to detect when it occurs. </p>
+<ul>
+<li>fe : eventName = 'userArrivedToGym' - return true if gym exists, false otherwise. </li>
+<li>fe : eventName = 'userArrivedWorkFromHome' - return true if work or home(or both) doesn't exist. </li>
+<li>fe : eventName = 'userArrivedAtPharmacy' - return true if your user has at least 1 pharmacy in his places. </li>
+</ul>
+<p>Plus, if both home and work exists to the user, we'll consider this event as complete, there's no need to set any more data in order for the sdk to detect the event. 
+<strong>Note:</strong> <em>User must be logged in for this method.</em></p>
+<h3 id="syntax_22">Syntax<a class="headerlink" href="#syntax_22" title="Permanent link">&para;</a></h3>
+<pre class="codehilite"><code>local isMissingData = neura.isMissingDataForEvent(eventName)</code></pre>
+
+
+<h4 id="eventname-required_1">eventName (required)<a class="headerlink" href="#eventname-required_1" title="Permanent link">&para;</a></h4>
+<p><em><a href="https://docs.coronalabs.com/api/type/String.html">String</a>.</em> event to check if all the require fields exists.</p>
+<h2 id="registerfirebasetoken"><strong>registerFirebaseToken()</strong><a class="headerlink" href="#registerfirebasetoken" title="Permanent link">&para;</a></h2>
+<h3 id="overview_25">Overview<a class="headerlink" href="#overview_25" title="Permanent link">&para;</a></h3>
+<p>If you've decided to <a href="#subscribeToEvent">neura.subscribeToEvent()</a> with push, you need to use <a href="#registerFirebaseToken">neura.registerFirebaseToken()</a> at least once in order to register your user with push. 
+Please follow our <a href="https://dev.theneura.com/docs/guide/android/pushnotification">Neura Push integration guide</a>. </p>
+<p>We recommend calling this method when callback from calling <a href="#authenticate">neura.authenticate()</a> is received.</p>
+<h3 id="syntax_23">Syntax<a class="headerlink" href="#syntax_23" title="Permanent link">&para;</a></h3>
+<pre class="codehilite"><code>neura.registerFirebaseToken()</code></pre>
+
+
+<h2 id="removesubscription"><strong>removeSubscription()</strong><a class="headerlink" href="#removesubscription" title="Permanent link">&para;</a></h2>
+<h3 id="overview_26">Overview<a class="headerlink" href="#overview_26" title="Permanent link">&para;</a></h3>
+<p>Removing subscription to a specified event. 
+Neura handles retry policy, and will try to delete subscription 3 times at the most. 
+Note that this call is similar to <a href="../subscribeToEvent">neura.subscribeToEvent()</a>.
+<strong>Note:</strong> <em>User must be logged in for this method.</em></p>
+<h3 id="syntax_24">Syntax<a class="headerlink" href="#syntax_24" title="Permanent link">&para;</a></h3>
+<pre class="codehilite"><code>neura.removeSubscription(eventName, eventIdentifier, listener)</code></pre>
+
+
+<h4 id="eventname-required_2">eventName (required)<a class="headerlink" href="#eventname-required_2" title="Permanent link">&para;</a></h4>
+<p><em><a href="https://docs.coronalabs.com/api/type/String.html">String</a>.</em> Subscription to be removed from this event.</p>
+<h4 id="eventidentifier-required">eventIdentifier (required)<a class="headerlink" href="#eventidentifier-required" title="Permanent link">&para;</a></h4>
+<p><em><a href="https://docs.coronalabs.com/api/type/String.html">String</a>.</em> The event identifier will be part of the data sent to your webhook when Neura identifies an event for this subscription. It's there for you to attach a user identification, for example. The webhook identifier is the one you gave while registering the app.</p>
+<h4 id="listener-optional_12">listener (optional)<a class="headerlink" href="#listener-optional_12" title="Permanent link">&para;</a></h4>
+<p><em><a href="https://docs.coronalabs.com/api/type/Listener.html">Listener</a>.</em> Callback to receive results. Event is sent to the default listener provided in <a href="#connect">neura.connect()</a> if no listener is provided.</p>
+<h2 id="sendfeedbackonevent"><strong>sendFeedbackOnEvent()</strong><a class="headerlink" href="#sendfeedbackonevent" title="Permanent link">&para;</a></h2>
+<h3 id="overview_27">Overview<a class="headerlink" href="#overview_27" title="Permanent link">&para;</a></h3>
+<p>Sending Neura a feedback for an event received. 
+<strong>Note:</strong> <em>User must be logged in for this method.</em></p>
+<h3 id="syntax_25">Syntax<a class="headerlink" href="#syntax_25" title="Permanent link">&para;</a></h3>
+<pre class="codehilite"><code>neura.sendFeedbackOnEvent(neuraId, approved)</code></pre>
+
+
+<h4 id="neuraid-required">neuraId (required)<a class="headerlink" href="#neuraid-required" title="Permanent link">&para;</a></h4>
+<p><em><a href="https://docs.coronalabs.com/api/type/String.html">String</a>.</em> neuraID received on your listener which catches the event by fcm or webhook.</p>
+<h4 id="approved-required">approved (required)<a class="headerlink" href="#approved-required" title="Permanent link">&para;</a></h4>
+<p><em><a href="https://docs.coronalabs.com/api/type/Boolean.html">Boolean</a>.</em> true if user approved that the event occurred, false otherwise.</p>
+<h2 id="shouldsubscribetoevent"><strong>shouldSubscribeToEvent()</strong><a class="headerlink" href="#shouldsubscribetoevent" title="Permanent link">&para;</a></h2>
+<h3 id="overview_28">Overview<a class="headerlink" href="#overview_28" title="Permanent link">&para;</a></h3>
+<p><strong>Returns:</strong> true if <a href="#subscribeToEvent">neura.subscribeToEvent()</a> should be called to eventName, false when the eventName is not valid, or, the eventName is a service (for example : dailyActivitySummary) and in this case - there's no need to subscribe to services, you can request services without subscribing, as long as they're declared on the permissions of your application. 
+<strong>Note:</strong> <em>User must be logged in for this method.</em></p>
+<h3 id="syntax_26">Syntax<a class="headerlink" href="#syntax_26" title="Permanent link">&para;</a></h3>
+<pre class="codehilite"><code>neura.shouldSubscribeToEvent(eventName)</code></pre>
+
+
+<h4 id="eventname-required_3">eventName (required)<a class="headerlink" href="#eventname-required_3" title="Permanent link">&para;</a></h4>
+<p><em><a href="https://docs.coronalabs.com/api/type/String.html">String</a>.</em> As taken from events listed on Neura dev site.</p>
+<h2 id="simulateanevent"><strong>simulateAnEvent()</strong><a class="headerlink" href="#simulateanevent" title="Permanent link">&para;</a></h2>
+<h3 id="overview_29">Overview<a class="headerlink" href="#overview_29" title="Permanent link">&para;</a></h3>
+<p>Simulating generating an event 
+<strong>Note:</strong> <em>User must be logged in for this method.</em></p>
+<h3 id="syntax_27">Syntax<a class="headerlink" href="#syntax_27" title="Permanent link">&para;</a></h3>
+<pre class="codehilite"><code>neura.simulateAnEvent()</code></pre>
+
+
+<h2 id="subscribetoevent"><strong>subscribeToEvent()</strong><a class="headerlink" href="#subscribetoevent" title="Permanent link">&para;</a></h2>
+<h3 id="overview_30">Overview<a class="headerlink" href="#overview_30" title="Permanent link">&para;</a></h3>
+<p>Adding subscription for a specified event. 
+Neura handles retry policy, and will try to subscribe 3 times at the most. 
+Note that this call is similar to <a href="#removeSubscription">neura.removeSubscription()</a>.
+<strong>Note:</strong> <em>User must be logged in for this method.</em></p>
+<h3 id="syntax_28">Syntax<a class="headerlink" href="#syntax_28" title="Permanent link">&para;</a></h3>
+<pre class="codehilite"><code>neura.subscribeToEvent(eventName, eventIdentifier, listener)</code></pre>
+
+
+<h4 id="eventname-required_4">eventName (required)<a class="headerlink" href="#eventname-required_4" title="Permanent link">&para;</a></h4>
+<p><em><a href="https://docs.coronalabs.com/api/type/String.html">String</a>.</em> Subscription to be added to this event.</p>
+<h4 id="eventidentifier-required_1">eventIdentifier (required)<a class="headerlink" href="#eventidentifier-required_1" title="Permanent link">&para;</a></h4>
+<p><em><a href="https://docs.coronalabs.com/api/type/String.html">String</a>.</em> The event identifier will be part of the data sent to your webhook when Neura identifies an event for this subscription. It's there for you to attach a user identification, for example. The webhook identifier is the one you gave while registering the app.</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../events/" class="btn btn-neutral float-right" title="Events">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href=".." class="btn btn-neutral" title="Introduction"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+      <p>Neura Plugin for Corona SDK - &copy;2017 Stiven Deleur - Deleur Apps</p>
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+    
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href=".." style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../events/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script src="../js/theme.js"></script>
+
+</body>
+</html>

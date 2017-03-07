@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="None">
+  <meta name="author" content="Stiven Deleur">
+  <link rel="shortcut icon" href="./img/favicon.ico">
+  <title>Introduction - Neura: Plugin API Docs</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="./css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="./css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="./css/highlight.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Introduction";
+    var mkdocs_page_input_path = "index.md";
+    var mkdocs_page_url = "/";
+  </script>
+  
+  <script src="./js/jquery-2.1.1.min.js"></script>
+  <script src="./js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="./js/highlight.pack.js"></script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="." class="icon icon-home"> Neura: Plugin API Docs</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="./search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+          
+            <li>
+    <li class="toctree-l1 current">
+        <a class="current" href=".">Introduction</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#welcome">Welcome</a></li>
+                
+                    <li><a class="toctree-l4" href="#overview">Overview</a></li>
+                
+            
+            </ul>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="functions/">Functions</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="events/">Events</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="about/">About</a>
+        
+    </li>
+<li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href=".">Neura: Plugin API Docs</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Introduction</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="welcome">Welcome<a class="headerlink" href="#welcome" title="Permanent link">&para;</a></h1>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>&nbsp;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Type</strong></td>
+<td><a href="http://docs.coronalabs.com/api/type/Library.html">Library</a></td>
+</tr>
+<tr>
+<td><strong>Corona Store</strong></td>
+<td><a href="https://store.coronalabs.com/plugin/neura">Neura</a></td>
+</tr>
+<tr>
+<td><strong>Sample Code</strong></td>
+<td><a href="https://github.com/DeleurApps/plugin_neura_sample">View Sample on GitHub</a></td>
+</tr>
+<tr>
+<td><strong>Platforms</strong></td>
+<td>Android</td>
+</tr>
+</tbody>
+</table>
+<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
+<p><a href="http://www.theneura.com">Neura</a> increases user engagement and grows revenue. Neura uses artifical intelligence (AI) on data from multiple sources. We run this data through our machine learning algorithms to create insights on your user. We use these insights to trigger specific features in your app, provide your user with data on their behavior that they may otherwise not be aware of, and combine our insights with your own dataset to create even deeper insights on your users.</p>
+<h3 id="corona-store-activation">Corona Store Activation<a class="headerlink" href="#corona-store-activation" title="Permanent link">&para;</a></h3>
+<p>In order to use this plugin, you must activate the plugin at the <a href="http://store.coronalabs.com/plugin/neura">Corona Store</a>.</p>
+<h3 id="sdk">SDK<a class="headerlink" href="#sdk" title="Permanent link">&para;</a></h3>
+<p>When you build using the Corona Simulator, the server automatically takes care of integrating the plugin into your project.</p>
+<p>All you need to do is add an entry into a <code>plugins</code> table of your <code>build.settings</code>. The following is an example of a minimal <code>build.settings</code> file:</p>
+<pre class="codehilite"><code>settings =
+{
+    plugins =
+    {
+        -- key is the name passed to Lua's 'require()'
+        [&quot;plugin.neura&quot;] =
+        {
+            -- required
+            publisherId = &quot;com.neura&quot;,
+        },
+    },
+}</code></pre>
+
+
+<h3 id="syntax">Syntax<a class="headerlink" href="#syntax" title="Permanent link">&para;</a></h3>
+<pre class="codehilite"><code class="language-lua">local neura = require &quot;plugin.neura&quot;</code></pre>
+
+
+<h3 id="register-your-app-with-neura">Register your app with Neura<a class="headerlink" href="#register-your-app-with-neura" title="Permanent link">&para;</a></h3>
+<h4 id="register-the-app">Register the app<a class="headerlink" href="#register-the-app" title="Permanent link">&para;</a></h4>
+<p>If you haven't already, <a href="https://dev.theneura.com/console/app/new">create an app</a> and fill the required information.</p>
+<h4 id="declare-permissions">Declare permissions<a class="headerlink" href="#declare-permissions" title="Permanent link">&para;</a></h4>
+<p>Here you decide which pieces of user data you want Neura to provide you with, and declare the value you'll provide to the user in exchange for that data. Want to be alerted whenever 'userStartedDriving' is triggered? This is the place to ask for that.</p>
+<p>During the authentication process, you will pass these permission requests and value propositions to Neura, and we'll ask your users to approve them when they sign in.</p>
+<h3 id="connect-to-neura">Connect to Neura<a class="headerlink" href="#connect-to-neura" title="Permanent link">&para;</a></h3>
+<pre class="codehilite"><code class="language-lua">local function generalNeuraListener(event)
+    print(&quot;Neura event: &quot; .. event.name)
+end
+
+local firebaseParams = {
+    apiKey = &quot;FIREBASE_API_KEY&quot;,
+    applicationId = &quot;FIREBASE_APP_ID&quot;,
+    gcmSenderId = &quot;FIREBASE_GCM_SENDER_ID&quot;
+}
+neura.connect({
+    appUid = &quot;APP_UID&quot;, 
+    appSecret = &quot;APP_SECRET&quot;,
+    firebase = firebaseParams},
+    generalNeuraListener) </code></pre>
+
+
+<h3 id="authenticate-with-neura">Authenticate with Neura<a class="headerlink" href="#authenticate-with-neura" title="Permanent link">&para;</a></h3>
+<p>After connecting with <code>neura.connect</code>, you can initiate the Neura authentication screen.</p>
+<pre class="codehilite"><code class="language-lua">local function authenticateListener(event)
+    if event.type == &quot;Success&quot; then
+        neura.registerFirebaseToken()
+
+        local events = { ... }
+        for i, v in ipairs(events) do
+            neura.subscribeToEvent(v, &quot;Identifier_&quot;..v)
+        end
+    else
+        print(&quot;Neura authentication failed!&quot;)
+    end
+end
+
+neura.authenticate(authenticateListener)</code></pre>
+
+
+<h3 id="receiving-events-from-neura">Receiving events from Neura<a class="headerlink" href="#receiving-events-from-neura" title="Permanent link">&para;</a></h3>
+<p>There are 2 options where you can receive events from Neura.</p>
+<p>You'll need to define which way you want to receive the event, and declare it in the "TECH INFO" section when <a href="https://dev.theneura.com/console/app/new">creating an application</a>.</p>
+<ol>
+<li><a href="https://firebase.google.com/docs/cloud-messaging/">Firebase Cloud Messaging</a>: Neura will send you an event to a service you declared on your manifest. If you don't have a server side, this is the only way you can receive an event.</li>
+<li><strong>Webhook</strong>: Neura will send an event to the url specified, and you will have to decide what to do with the event.</li>
+</ol>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="functions/" class="btn btn-neutral float-right" title="Functions">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+      <p>Neura Plugin for Corona SDK - &copy;2017 Stiven Deleur - Deleur Apps</p>
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+    
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+      
+        <span style="margin-left: 15px"><a href="functions/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script src="./js/theme.js"></script>
+
+</body>
+</html>
+
+<!--
+MkDocs version : 0.16.1
+Build Date UTC : 2017-03-07 23:05:37
+-->
