@@ -2,4 +2,4 @@
 
 Documentation availible through deleurapps.com
 
-[Neura Plugin Docs](http://neura.deleurapps.com)
+[Neura Plugin Docs](https://deleurapps.github.io/corona-plugin-neura-docs/)

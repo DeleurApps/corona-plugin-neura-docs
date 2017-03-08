@@ -4,7 +4,7 @@
 | -------------------- | ---------------------------------------------------------------
 | __Type__             | [Library](http://docs.coronalabs.com/api/type/Library.html)
 | __Corona Store__     | [Neura](https://store.coronalabs.com/plugin/neura)
-| __Sample Code__      | [View Sample on GitHub](https://github.com/DeleurApps/plugin_neura_sample)
+| __Sample Code__      | [View Sample on GitHub](https://github.com/DeleurApps/corona-plugin-neura-sample)
 | __Platforms__        | Android
 
 ## Overview
