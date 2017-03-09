@@ -416,7 +416,7 @@ Check if user is logged in to Neura.
 
 ### Syntax
 
-    neura.isLoggedIn()
+    local isLoggedIn = neura.isLoggedIn()
 
 
 ## **isMissingDataForEvent()**
@@ -504,7 +504,7 @@ _[Boolean](https://docs.coronalabs.com/api/type/Boolean.html)._ true if user app
 
 ### Syntax
 
-    neura.shouldSubscribeToEvent(eventName)
+    local shouldSubscribe = neura.shouldSubscribeToEvent(eventName)
 
 #### eventName (required)
 _[String](https://docs.coronalabs.com/api/type/String.html)._ As taken from events listed on Neura dev site.
