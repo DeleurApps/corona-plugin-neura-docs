@@ -449,7 +449,7 @@ Check out the full list of <a href="https://dev.theneura.com/docs/api/labels">av
 <p>Check if user is logged in to Neura.</p>
 <p><strong>Returns:</strong> true if the user is logged in to Neura. If user is logged in, you may call any api method in this class, if user isn't logged in, please call <a href="#authenticate">neura.authenticate()</a>.</p>
 <h3 id="syntax_21">Syntax<a class="headerlink" href="#syntax_21" title="Permanent link">&para;</a></h3>
-<pre class="codehilite"><code>neura.isLoggedIn()</code></pre>
+<pre class="codehilite"><code>local isLoggedIn = neura.isLoggedIn()</code></pre>
 
 
 <h2 id="ismissingdataforevent"><strong>isMissingDataForEvent()</strong><a class="headerlink" href="#ismissingdataforevent" title="Permanent link">&para;</a></h2>
@@ -510,7 +510,7 @@ Note that this call is similar to <a href="../subscribeToEvent">neura.subscribeT
 <p><strong>Returns:</strong> true if <a href="#subscribeToEvent">neura.subscribeToEvent()</a> should be called to eventName, false when the eventName is not valid, or, the eventName is a service (for example : dailyActivitySummary) and in this case - there's no need to subscribe to services, you can request services without subscribing, as long as they're declared on the permissions of your application. 
 <strong>Note:</strong> <em>User must be logged in for this method.</em></p>
 <h3 id="syntax_26">Syntax<a class="headerlink" href="#syntax_26" title="Permanent link">&para;</a></h3>
-<pre class="codehilite"><code>neura.shouldSubscribeToEvent(eventName)</code></pre>
+<pre class="codehilite"><code>local shouldSubscribe = neura.shouldSubscribeToEvent(eventName)</code></pre>
 
 
 <h4 id="eventname-required_3">eventName (required)<a class="headerlink" href="#eventname-required_3" title="Permanent link">&para;</a></h4>
